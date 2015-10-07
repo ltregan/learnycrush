@@ -1,4 +1,4 @@
-package ltregan.learnycrush.web;
+package ltregan.learnycrush.app;
 
 /**
  * Hello world!

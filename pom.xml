@@ -14,6 +14,7 @@
   </properties>
 
   <modules>
+    <module>app</module>
     <module>web</module>
   </modules>
 </project>

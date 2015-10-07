@@ -1,4 +1,4 @@
-package ltregan.learnycrush.web;
+package ltregan.learnycrush.app;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
