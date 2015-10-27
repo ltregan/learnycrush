@@ -1,0 +1,6 @@
+
+<div class="question"><span id="question">{question}</span></div>
+        <ul class="choices">{#choices}
+            <li onclick="card.choiceOnClick(this)" class="openChoice">{.}</li>
+        {/choices}</ul>
+    </div>

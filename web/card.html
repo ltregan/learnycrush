@@ -5,18 +5,37 @@
     <title></title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet"  href="card.css">
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/dust/dist/dust-full-0.3.0.js"></script>
+
+    <script>
+        var modules = [];
+        function require(s){
+            var module = modules[s];
+            if( module )
+                return module;
+            var xhrObj = new XMLHttpRequest();
+            xhrObj.open('GET', s+'.js', false);
+            xhrObj.send(null);
+            var module = {};
+            var exports = {};
+            module.exports = exports;
+            eval(xhrObj.responseText);
+            modules[ s ] = module.exports;
+            return module.exports;
+        }
+    </script>
+
+    <script>
+        card = require( "card" );
+    </script>
+
 </head>
 
 <body>
-    <div class="card">
-        <div class="question">1</div>
-        <ul class="choices">
-            <li>ein</li>
-            <li>zwei</li>
-            <li>vier</li>
-            <li>fünf</li>
-            <li>sechs</li>
-        </ul>
-    </div>
+
+    <div class="card" id="card"></div>
+
 </body>
 </html>

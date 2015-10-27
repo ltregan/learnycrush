@@ -27,6 +27,7 @@ body{
 }
 
 
+
 .choices li{
 
     font-size: 2em;
@@ -35,9 +36,8 @@ body{
     text-align: center;
 
 
-    background-color:#77b55a;
     border-radius:4px;
-    border:1px solid #4b8f29;
+
     cursor:pointer;
     color:#ffffff;
     font-family:Arial;
@@ -47,3 +47,16 @@ body{
     text-decoration:none;
     text-shadow:0px 1px 0px #5b8a3c;
 }
+
+.openChoice {
+    background-color:#77b55a;
+    border:1px solid #4b8f29;
+}
+
+.wrongChoice {
+    background-color:red;
+    border:1px solid #FF8f29;
+}
+
+
+
