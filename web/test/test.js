@@ -52,6 +52,10 @@ describe("RandomSequence", function() {
         it( "should take 10 questions before exhausting the lesson", function(){
             assert.equal(i, sequence.RandomSequence.TEST_SET * sequence.RandomSequence.REPEAT_SUCCESS);
         });
+        it("progress should be 90% before the last question was answered", function(){
+            assert.equal( test.progress, 90 );
+            assert.equal( randomSequence.getProgress(), 100 );
+        });
     });
 
     describe("mocked-out iterator", function() {
@@ -61,6 +65,9 @@ describe("RandomSequence", function() {
             return 1;
         };
         var test;
+        it("progress should be 0% at the beggining of the test", function(){
+            assert.equal( randomSequence.getProgress(), 0 );
+        });
         it("first choice presented REPEAT_SUCCESS time", function(){
             for (var i = 0; i < sequence.RandomSequence.REPEAT_SUCCESS; i++) {
                 test = randomSequence.nextTest();
@@ -70,7 +77,27 @@ describe("RandomSequence", function() {
             test = randomSequence.nextTest();
             assert.equal(test.question, "14", "try #" + i + ":move next question.");
         });
+        it("progress should be 20% with one question answered", function(){
+            assert.equal( test.progress, 20 );
+        });
     });
 });
 
+describe("arrayplay", function() {
+    it("array", function() {
+        var a = [];
+        a["prop1"] = 1;
+        assert.equal(1, a["prop1"]);
+        assert.equal(1, a.prop1);
+        console.log( Object.keys(a) );
+    });
+    it("obj", function() {
+        var a = {};
+        a["prop1"] = 1;
+        assert.equal(1, a["prop1"]);
+        assert.equal(1, a.prop1);
+        console.log( Object.keys(a) );
+    });
+
+});
 
