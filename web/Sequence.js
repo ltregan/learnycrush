@@ -106,7 +106,7 @@ class RandomSequence extends AbstractSequence {
 RandomSequence.TEST_SET = 5;
 RandomSequence.REPEAT_SUCCESS = 2;
 
-RandomSequence.SWITCH_TO_KEYBOARD = -1;
+RandomSequence.SWITCH_TO_KEYBOARD = 3;
 
 
 
