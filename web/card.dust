@@ -1,6 +1,15 @@
 
 <div class="question"><span id="question">{question}</span></div>
-        <ul class="choices">{#choices}
-            <li onclick="card.choiceOnClick(this)" class="openChoice">{.}</li>
-        {/choices}</ul>
+        {?keyboard}
+            <input id="answer" autofocus onkeyup="card.choiceKeyUp(event)" >
+        {:else}
+            <ul class="choices">{#choices}
+                <li onclick="card.choiceOnClick(this)" class="openChoice">{.}</li>
+            {/choices}</ul>
+        {/keyboard}
+
+        <meter value="{progress}" max="100" width="100%" height="10em"> </meter>
+
     </div>
+
+
